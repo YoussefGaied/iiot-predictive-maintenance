@@ -1,0 +1,25 @@
+# OS / editor
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Arduino / PlatformIO build output
+build/
+.pio/
+*.elf
+*.bin
+
+# Python (later phases)
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Node (later phases)
+node_modules/
+dist/
+
+# Secrets - never commit credentials (Wi-Fi, MQTT, DB)
+secrets.h
+*.secret
