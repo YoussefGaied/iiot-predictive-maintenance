@@ -1,0 +1,21 @@
+# Phase 3 | phase3_ds18b20_test v0.1 | run 1 | 10 kOhm pull-up, DQ on GPIO 4
+# First 5 samples at rest, then finger pinch from about t = 12800 ms. Capture ends while still warm.
+=== DS18B20 test v0.1 ===
+Devices on bus (GPIO 4): 1
+ROM address: 282FC4A003E68B8F
+Family code: 0x28 (DS18B20 = 0x28)
+Parasite power mode: no
+Columns: t_ms, temperature_C
+2800, 28.12
+4800, 28.12
+6800, 28.12
+8800, 28.06
+10800, 28.06
+12800, 28.25
+14800, 29.62
+16800, 30.44
+18800, 30.88
+20800, 31.25
+22800, 31.50
+24800, 31.62
+26800, 31.75

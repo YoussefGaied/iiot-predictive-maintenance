@@ -20,7 +20,7 @@ learning is added only if enough representative data exists.
 | 0 | Identify hardware | In progress (see `docs/hardware-inventory.md`) |
 | 1 | ESP32 setup and upload test | Done (2026-10-10) |
 | 2 | MPU6050 accelerometer over I²C | Done (2026-10-10) |
-| 3 | DS18B20 temperature sensor | Not started |
+| 3 | DS18B20 temperature sensor | Done (2026-10-10) |
 | 4 | Drive the 6 V motor with the L298N | Not started |
 | 5 | ACS712 current sensing + calibration | Not started |
 | 6 | LM393 speed sensor + RPM | Not started |

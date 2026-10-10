@@ -1,0 +1,25 @@
+# Phase 3 | phase3_ds18b20_test v0.1 | run 2 | 10 kOhm pull-up, DQ on GPIO 4
+# Rest, finger pinch from about t = 8800 ms, release after the peak at t = 16800 ms (inferred
+# from the data), then cooling in air. Capture ends before the sensor is back at its rest value.
+=== DS18B20 test v0.1 ===
+Devices on bus (GPIO 4): 1
+ROM address: 282FC4A003E68B8F
+Family code: 0x28 (DS18B20 = 0x28)
+Parasite power mode: no
+Columns: t_ms, temperature_C
+2800, 28.19
+4800, 28.19
+6800, 28.12
+8800, 28.50
+10800, 30.12
+12800, 31.00
+14800, 31.50
+16800, 31.81
+18800, 31.69
+20800, 31.12
+22800, 30.69
+24800, 30.31
+26800, 30.06
+28800, 29.81
+30800, 29.62
+32800, 29.44
