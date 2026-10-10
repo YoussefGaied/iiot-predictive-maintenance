@@ -1,0 +1,4 @@
+# Phase 2 | phase2_mpu6050_read v0.1 startup output
+=== MPU6050 raw read v0.1 ===
+WHO_AM_I = 0x70 (genuine MPU6050 usually reads 0x68)
+MPU6050 awake. Columns: ax ay az |a| (g)  gx gy gz (deg/s)  chip temp (C)

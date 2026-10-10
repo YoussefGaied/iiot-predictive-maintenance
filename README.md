@@ -19,7 +19,7 @@ learning is added only if enough representative data exists.
 |---|---|---|
 | 0 | Identify hardware | In progress (see `docs/hardware-inventory.md`) |
 | 1 | ESP32 setup and upload test | Done (2026-10-10) |
-| 2 | MPU6050 accelerometer over I²C | Not started |
+| 2 | MPU6050 accelerometer over I²C | Done (2026-10-10) |
 | 3 | DS18B20 temperature sensor | Not started |
 | 4 | Drive the 6 V motor with the L298N | Not started |
 | 5 | ACS712 current sensing + calibration | Not started |
@@ -44,7 +44,7 @@ PostgreSQL → React + TypeScript dashboard.
 ## Repository layout
 
 ```
-docs/                 engineering log, hardware inventory, safety notes, images
+docs/                 engineering log, hardware inventory, safety notes, phase write-ups, raw logs, images
 firmware/             one folder per phase, each with its own sketch
 ```
 

@@ -1,0 +1,14 @@
+# Phase 2 | scan: phase2_i2c_scan v0.1 | read: phase2_mpu6050_read v0.1
+# Board resting in one orientation (standing on its side), USB power only.
+# Raw capture as reported; a stray character after "---" was dropped.
+# v0.1 columns: ax ay az |a| (g)  gx gy gz (deg/s)  die temp (C, MPU6050 formula; not trusted)
+Device found at 0x68
+1 device(s) found
+---
+-0.047   -0.985    0.369 | 1.053|      1.04     1.55    -0.21   47.8
+  -0.046   -0.989    0.365 | 1.055|      1.08     1.50    -0.41   47.7
+  -0.051   -0.990    0.375 | 1.060|      1.09     1.61    -0.41   47.5
+  -0.045   -0.983    0.376 | 1.054|      0.92     1.78    -0.03   47.7
+  -0.052   -0.996    0.372 | 1.064|      1.06     1.86    -0.79   47.8
+  -0.043   -0.992    0.371 | 1.060|      1.25     1.66    -0.17   48.0
+  -0.047   -0.986    0.373 | 1.055|      1.44     1.61    -0.27   47.8

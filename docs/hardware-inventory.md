@@ -9,7 +9,7 @@ appearance alone.
 | L298N motor driver | Yes | No | Check terminal labels, enable jumper, regulator jumper. Significant voltage drop. |
 | Mini 6 V DC motor "310DC" | Yes | No | Avoid stalls and prolonged runs. |
 | ACS712 current sensor | Yes | No | Variant (5/20/30 A) to be read from chip marking. 20 A range may give poor resolution for this motor. |
-| MPU6050 / GY-521 | Yes | No | Headers soldered. Inspect for solder bridges; verify labels and voltage arrangement. |
+| MPU6050 / GY-521 | Yes | Partly (I2C, WHO_AM_I) | Sold as MPU6050. WHO_AM_I = 0x70 (MPU-6500 class; genuine MPU6050 = 0x68), address 0x68. Accel/gyro read works. Uncalibrated: estimated offsets about -0.13 g (X) and +0.25 g (Z). Chip marking not read. |
 | DS18B20 (TO-92) | Yes | No | Bare 3-pin sensor. Confirm marking and pinout before powering. |
 | LM393 speed sensor module | Yes | No | Appears to be a slot (fork) type from the photo; unconfirmed. Needs a target on the shaft. |
 | 6×AA battery holder with barrel lead | Yes | No | Fresh alkaline cells can reach ~9 V. Not safe to assume for the 6 V motor. |
