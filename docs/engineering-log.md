@@ -44,3 +44,13 @@ issues, next step. Only record what was actually observed.
 - Gyro bias ~ +1.1 / +1.7 / -0.4 deg/s; rotation test PASS
 - Details: docs/phases/phase2_imu.md; raw captures: docs/logs/phase2_*.txt
 - Next: Phase 3, DS18B20
+## 2026-10-11 - Phase 4: motor + L298N (DONE)
+- Wiring: motor OUT1/OUT2; supply 6 AA to +12V/GND; ESP32 VIN to +5V terminal;
+  GND common; GPIO 25/26/27 to ENA/IN1/IN2. ENA cap and 5V-enable cap removed.
+- Firmware: phase4_motor_test v0.1 (f/r/s, +/-, 3 s auto-stop)
+- Result: forward, reverse, stop and auto-stop work. Lowest starting duty 145
+  (10-step grid, 6 fresh AA, voltage not measured).
+- Issues: first hum was the old Phase 3 sketch still uploaded; first by-hand
+  test failed with the board's own 5 V, worked once logic came from ESP32 VIN.
+- Details: docs/phases/phase4_motor_l298n.md; raw capture docs/logs/phase4_run1_serial.txt
+- Next: Phase 5, ACS712 current sensing

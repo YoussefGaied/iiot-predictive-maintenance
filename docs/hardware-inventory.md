@@ -30,4 +30,7 @@ for RPM sensing.
 - Cooling time constant roughly 12-15 s (rough, single run, still air)
 - Limitations: no reference thermometer; thermal lag; 4.7 kOhm pull-up recommended for longer wires
 - Details: docs/phases/phase3_ds18b20.md; raw captures: docs/logs/phase3_run*.txt
-- Next: Phase 4, motor + L298N
+-  Phase 4, motor + L298N :done : terminals OUT1/OUT2/+12V/GND/+5V/OUT3/OUT4, edge pins ENA/IN1-IN4/ENB; 5V jumper removed and ENA cap removed; driven from ESP32
+Motor: it spins directly from 4 AA and from the L298N.
+Battery holder: 6 AA slots, series, voltage not measured.
+Barrel adapter: the L298N power LED lit, polarity not measured.

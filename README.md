@@ -21,7 +21,7 @@ learning is added only if enough representative data exists.
 | 1 | ESP32 setup and upload test | Done (2026-10-10) |
 | 2 | MPU6050 accelerometer over I²C | Done (2026-10-10) |
 | 3 | DS18B20 temperature sensor | Done (2026-10-10) |
-| 4 | Drive the 6 V motor with the L298N | Not started |
+| 4 | Drive the 6 V motor with the L298N | Done (2026-11-10) |
 | 5 | ACS712 current sensing + calibration | Not started |
 | 6 | LM393 speed sensor + RPM | Not started |
 | 7 | Vibration and operating-condition baselines | Not started |

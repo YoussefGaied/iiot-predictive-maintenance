@@ -1,0 +1,25 @@
+# Phase 4 run 1 - firmware phase4_motor_test v0.1, 2026-10-11
+# Setup: 6 fresh AA (no bridge wires), duty 255 (DUTY_MAX 255), L298N logic from ESP32 VIN.
+# Commands typed (in order): f, (wait 3 s), r, (wait 3 s), f then s, r then s.
+# Pack voltage and motor voltage NOT measured (no multimeter).
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0030,len:4876
+ho 0 tail 12 room 4
+load:0x40078000,len:16560
+load:0x40080400,len:3500
+entry 0x400805b4
+Phase 4 motor test v0.1  (f/r/s, +/-)
+dir=0 duty=255
+dir=1 duty=255
+auto-stop
+dir=0 duty=255
+dir=-1 duty=255
+auto-stop
+dir=0 duty=255
+dir=1 duty=255
+dir=0 duty=255
+dir=-1 duty=255
+dir=0 duty=255

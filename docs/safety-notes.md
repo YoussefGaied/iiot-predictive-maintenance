@@ -28,3 +28,4 @@ Read before wiring.
     never see 5 V.
 15. If anything smells unusual, becomes hot, or the ESP32 resets
     unexpectedly, disconnect power immediately.
+16. With the L298N +5V terminal fed from ESP32 VIN, the 5V-enable jumper must stay removed.
