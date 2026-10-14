@@ -6,7 +6,8 @@ appearance alone.
 | Component | Owned | Verified | Notes |
 |---|---|---|---|
 | ESP32 DevKit V1 (USB-C) | Yes | Chip info read 2026-10-10 | ESP32-D0WD-V3 rev 301, 4 MB flash, LED on GPIO 2 |
-| L298N motor driver | Yes | No | Check terminal labels, enable jumper, regulator jumper. Significant voltage drop. |
+| L298N: Verified Yes. Notes: terminals OUT1, OUT2, +12V, GND, +5V, OUT3, OUT4; edge pins ENA, IN1-IN4, ENB; ENA cap and 5V-enable cap removed.
+ACS712: Partly. Notes: chip marking “ACS712TELC-20A25331”, so it is the 20 A variant (100 mV/A per datasheet); the module pins are VCC, OUT, GND.
 | Mini 6 V DC motor "310DC" | Yes | No | Avoid stalls and prolonged runs. |
 | ACS712 current sensor | Yes | No | Variant (5/20/30 A) to be read from chip marking. 20 A range may give poor resolution for this motor. |
 | MPU6050 / GY-521 | Yes | Partly (I2C, WHO_AM_I) | Sold as MPU6050. WHO_AM_I = 0x70 (MPU-6500 class; genuine MPU6050 = 0x68), address 0x68. Accel/gyro read works. Uncalibrated: estimated offsets about -0.13 g (X) and +0.25 g (Z). Chip marking not read. |

@@ -44,6 +44,12 @@ issues, next step. Only record what was actually observed.
 - Gyro bias ~ +1.1 / +1.7 / -0.4 deg/s; rotation test PASS
 - Details: docs/phases/phase2_imu.md; raw captures: docs/logs/phase2_*.txt
 - Next: Phase 3, DS18B20
+## 2026-10-10 - Phase 3: DS18B20 (DONE)
+- Wiring: DQ on GPIO 4 with 10 kOhm pull-up to 3V3, VDD on 3V3, GND to GND (not parasite powered).
+- Firmware: phase3_ds18b20_test v0.1.
+- Result: 1 device, family 0x28, no -127 / 85.00 errors. Rest 28.06-28.19 C; finger pinch peak 31.81 C; 29.44 C about 16 s after release. 12-bit steps of 0.0625 C.
+- Limits: no reference thermometer, so absolute accuracy unverified.
+- Next: Phase 4.
 ## 2026-10-11 - Phase 4: motor + L298N (DONE)
 - Wiring: motor OUT1/OUT2; supply 6 AA to +12V/GND; ESP32 VIN to +5V terminal;
   GND common; GPIO 25/26/27 to ENA/IN1/IN2. ENA cap and 5V-enable cap removed.
