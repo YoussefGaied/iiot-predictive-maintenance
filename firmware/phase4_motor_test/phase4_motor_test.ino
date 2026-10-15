@@ -4,8 +4,7 @@
 
 const int PIN_ENA = 25;
 const int PIN_IN1 = 26;
-const int PIN_IN2 = 27;f
-
+const int PIN_IN2 = 27;
 
 const int PWM_FREQ = 5000;       // Hz
 const int PWM_BITS = 8;          // duty 0..255
