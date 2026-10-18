@@ -1,0 +1,36 @@
+# Phase 7B, firmware phase7b_baseline v0.2 (I2C 100 kHz, 5 ms timeout). IMU taped on the motor body, fresh 6 AA.
+# Pasted by the user. Trimmed: rest stretches shortened to a marker line; only runs 1 (duty 195) and 4 (duty 255) kept.
+# This log shows: rest windows are clean (n about 500, err=0); while the motor runs the IMU reads fail
+# (n down to 37-260, err up to 205) and amean_g leaves 1.00, so vib_rms_g under motor power is NOT valid.
+# The pulses/hz/rpm columns in this firmware count rising edges and are not valid either (see Phase 6).
+=== phase7b_baseline v0.2  (f/r/s, +/-)  ppr=2 (user-reported) ===
+WHO_AM_I = 0x70
+run=0 dir=0 duty=195 n=1 err=0 pulses=0 hz=0.0 rpm=0 vib_rms_g=0.0000 amean_g=1.002
+run=0 dir=0 duty=195 n=499 err=0 pulses=0 hz=0.0 rpm=0 vib_rms_g=0.0051 amean_g=1.002
+run=0 dir=0 duty=195 n=499 err=0 pulses=0 hz=0.0 rpm=0 vib_rms_g=0.0051 amean_g=1.002
+run=0 dir=0 duty=195 n=500 err=0 pulses=0 hz=0.0 rpm=0 vib_rms_g=0.0049 amean_g=1.002
+# [rest lines omitted]
+dir=1 duty=195
+run=1 dir=1 duty=195 n=378 err=40 pulses=86 hz=172.0 rpm=5160 vib_rms_g=0.7445 amean_g=0.917
+run=1 dir=1 duty=195 n=201 err=100 pulses=188 hz=375.2 rpm=11257 vib_rms_g=1.3922 amean_g=0.686
+run=1 dir=1 duty=195 n=191 err=102 pulses=220 hz=440.0 rpm=13200 vib_rms_g=1.3988 amean_g=0.734
+run=1 dir=1 duty=195 n=165 err=120 pulses=245 hz=486.1 rpm=14583 vib_rms_g=1.3443 amean_g=0.525
+run=1 dir=1 duty=195 n=170 err=111 pulses=233 hz=466.0 rpm=13980 vib_rms_g=1.3631 amean_g=0.594
+run=1 dir=1 duty=195 n=153 err=116 pulses=265 hz=525.8 rpm=15774 vib_rms_g=1.3408 amean_g=0.564
+auto-stop
+dir=0 duty=195
+run=1 dir=0 duty=195 n=420 err=31 pulses=79 hz=158.0 rpm=4740 vib_rms_g=0.8389 amean_g=0.901
+run=1 dir=0 duty=195 n=499 err=0 pulses=0 hz=0.0 rpm=0 vib_rms_g=0.0054 amean_g=1.002
+# [rest lines omitted]
+dir=1 duty=255
+run=4 dir=1 duty=255 n=303 err=59 pulses=181 hz=359.1 rpm=10774 vib_rms_g=0.5891 amean_g=0.912
+run=4 dir=1 duty=255 n=64 err=172 pulses=492 hz=976.2 rpm=29286 vib_rms_g=1.5369 amean_g=0.353
+run=4 dir=1 duty=255 n=81 err=203 pulses=516 hz=1029.9 rpm=30898 vib_rms_g=1.5673 amean_g=0.477
+run=4 dir=1 duty=255 n=59 err=177 pulses=512 hz=1022.0 rpm=30659 vib_rms_g=1.6898 amean_g=0.427
+run=4 dir=1 duty=255 n=82 err=180 pulses=483 hz=966.0 rpm=28980 vib_rms_g=1.5985 amean_g=0.209
+run=4 dir=1 duty=255 n=89 err=193 pulses=506 hz=1010.0 rpm=30299 vib_rms_g=1.5980 amean_g=0.188
+auto-stop
+dir=0 duty=255
+run=4 dir=0 duty=255 n=314 err=78 pulses=228 hz=456.0 rpm=13680 vib_rms_g=1.0936 amean_g=0.904
+run=4 dir=0 duty=255 n=500 err=0 pulses=0 hz=0.0 rpm=0 vib_rms_g=0.0620 amean_g=1.009
+# [rest lines omitted]

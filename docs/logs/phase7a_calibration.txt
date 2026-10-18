@@ -1,0 +1,28 @@
+# Phase 7A, firmware phase7a_imu_calibration v0.1. Six-position accelerometer calibration, battery out, IMU only.
+# Pasted by the user from the Serial Monitor (the result lines were pasted as separate blocks).
+=== phase7a_imu_calibration v0.1 ===
+WHO_AM_I = 0x70
+Commands: c capture, p result, v verify, r reset
+pose=+Z  a_g=(-0.1238 0.0380 1.2676)  sd_g=(0.0025 0.0036 0.0045)  gyro_dps=(1.31 1.58 -0.91)
+captured 1 of 6 poses: +X(-) -X(-) +Y(-) -Y(-) +Z(ok) -Z(-)
+pose=-Z  a_g=(0.1752 0.0277 -0.7134)  sd_g=(0.0075 0.0034 0.0047)  gyro_dps=(1.00 2.33 0.15)
+captured 2 of 6 poses: +X(-) -X(-) +Y(-) -Y(-) +Z(ok) -Z(ok)
+pose=-X  a_g=(-1.0323 0.0012 0.3559)  sd_g=(0.0026 0.0030 0.0048)  gyro_dps=(0.99 1.93 -0.41)
+captured 3 of 6 poses: +X(-) -X(ok) +Y(-) -Y(-) +Z(ok) -Z(ok)
+pose=+Y  a_g=(-0.0585 0.9965 0.3895)  sd_g=(0.0024 0.0024 0.0039)  gyro_dps=(1.27 1.59 -1.34)
+captured 4 of 6 poses: +X(-) -X(ok) +Y(ok) -Y(-) +Z(ok) -Z(ok)
+pose=+X  a_g=(0.9428 -0.0042 0.4358)  sd_g=(0.0029 0.0027 0.0042)  gyro_dps=(1.06 1.56 -0.67)
+captured 5 of 6 poses: +X(ok) -X(ok) +Y(ok) -Y(-) +Z(ok) -Z(ok)
+pose=-Y  a_g=(0.0289 -0.9929 0.3279)  sd_g=(0.0032 0.0023 0.0068)  gyro_dps=(0.96 1.82 -1.90)
+captured 6 of 6 poses: +X(ok) -X(ok) +Y(ok) -Y(ok) +Z(ok) -Z(ok)
+axis=X offset_g=-0.0448 scale=0.9876  (reading at +1 g: 0.9428, at -1 g: -1.0323)
+axis=Y offset_g=0.0018 scale=0.9947  (reading at +1 g: 0.9965, at -1 g: -0.9929)
+axis=Z offset_g=0.2771 scale=0.9905  (reading at +1 g: 1.2676, at -1 g: -0.7134)
+--- gyro bias (mean over the six still captures, deg/s) and spread max-min ---
+gyro X bias_dps=1.101 spread=0.349
+gyro Y bias_dps=1.800 spread=0.773
+gyro Z bias_dps=-0.847 spread=2.054
+const float ACC_OFFSET[3] = {-0.0448, 0.0018, 0.2771};
+const float ACC_SCALE[3]  = {0.9876, 0.9947, 0.9905};
+raw_g=(-0.8509 -0.0042 -0.3413) |a|raw=0.9168   corrected_g=(-0.8163 -0.0060 -0.6243) |a|corrected=1.0277
+raw_g=(0.7571 0.0131 0.8717) |a|raw=1.1546   corrected_g=(0.8119 0.0114 0.6003) |a|corrected=1.0098

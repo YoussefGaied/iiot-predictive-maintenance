@@ -1,0 +1,61 @@
+# Phase 7B, firmware phase7b_baseline v0.5 (CHANGE interrupt; a pulse counts when D0 is HIGH then LOW after at least
+# w=100 us; ppr=2 is ASSUMED). IMU on and fixed to the motor body, 6 AA pack, forward 3 s runs.
+# Pasted by the user. Trimmed: the boot garbage, a mid-session reset, command echoes without data, and long rest
+# stretches are replaced by marker lines. Runs 1 and 2 are duty 195; runs 8 and 9 are duty 255.
+# Reading: pulses (completed) are 2-6 times fewer than rise (rising edges). While the motor runs the IMU reads
+# still fail (n 88-248 of 500, err 77-149) and amean_g falls to 0.27-0.96, so vib_rms_g in those windows is NOT valid.
+=== phase7b_baseline v0.5  (f/r/s, +/-, i, w<us>, p<n>)  ppr=2 ASSUMED ===
+WHO_AM_I = 0x70
+run=0 dir=0 duty=195 imu=1 w=100 ppr=2 n=498 err=0 pulses=0 rise=0 pps=0.0 rpm=0 vib_rms_g=0.0055 amean_g=1.000
+run=0 dir=0 duty=195 imu=1 w=100 ppr=2 n=498 err=0 pulses=0 rise=0 pps=0.0 rpm=0 vib_rms_g=0.0051 amean_g=1.000
+run=0 dir=0 duty=195 imu=1 w=100 ppr=2 n=498 err=0 pulses=0 rise=0 pps=0.0 rpm=0 vib_rms_g=0.0047 amean_g=1.000
+# [rest lines omitted]
+dir=1 duty=195
+run=1 dir=1 duty=195 imu=1 w=100 ppr=2 n=437 err=16 pulses=19 rise=42 pps=37.8 rpm=1133 vib_rms_g=0.2701 amean_g=0.961
+run=1 dir=1 duty=195 imu=1 w=100 ppr=2 n=238 err=77 pulses=104 rise=226 pps=206.3 rpm=6190 vib_rms_g=0.6430 amean_g=0.706
+run=1 dir=1 duty=195 imu=1 w=100 ppr=2 n=203 err=89 pulses=107 rise=255 pps=213.6 rpm=6407 vib_rms_g=0.6516 amean_g=0.631
+run=1 dir=1 duty=195 imu=1 w=100 ppr=2 n=202 err=105 pulses=109 rise=270 pps=218.0 rpm=6540 vib_rms_g=0.6505 amean_g=0.592
+run=1 dir=1 duty=195 imu=1 w=100 ppr=2 n=181 err=89 pulses=108 rise=269 pps=216.0 rpm=6480 vib_rms_g=0.6161 amean_g=0.667
+run=1 dir=1 duty=195 imu=1 w=100 ppr=2 n=214 err=101 pulses=102 rise=257 pps=204.0 rpm=6120 vib_rms_g=0.6513 amean_g=0.635
+auto-stop
+dir=0 duty=195
+run=1 dir=0 duty=195 imu=1 w=100 ppr=2 n=302 err=64 pulses=88 rise=191 pps=176.0 rpm=5280 vib_rms_g=0.5424 amean_g=0.826
+run=1 dir=0 duty=195 imu=1 w=100 ppr=2 n=499 err=0 pulses=1 rise=2 pps=2.0 rpm=60 vib_rms_g=0.0767 amean_g=1.001
+# [rest lines omitted]
+dir=1 duty=195
+run=2 dir=1 duty=195 imu=1 w=100 ppr=2 n=462 err=7 pulses=8 rise=16 pps=15.9 rpm=476 vib_rms_g=0.0978 amean_g=0.998
+run=2 dir=1 duty=195 imu=1 w=100 ppr=2 n=248 err=77 pulses=92 rise=221 pps=184.0 rpm=5520 vib_rms_g=0.5756 amean_g=0.763
+run=2 dir=1 duty=195 imu=1 w=100 ppr=2 n=185 err=118 pulses=105 rise=339 pps=210.0 rpm=6300 vib_rms_g=0.6569 amean_g=0.581
+run=2 dir=1 duty=195 imu=1 w=100 ppr=2 n=159 err=97 pulses=105 rise=328 pps=209.2 rpm=6275 vib_rms_g=0.6563 amean_g=0.601
+run=2 dir=1 duty=195 imu=1 w=100 ppr=2 n=192 err=99 pulses=98 rise=367 pps=194.4 rpm=5833 vib_rms_g=0.7763 amean_g=0.547
+run=2 dir=1 duty=195 imu=1 w=100 ppr=2 n=199 err=101 pulses=101 rise=368 pps=200.8 rpm=6024 vib_rms_g=0.7389 amean_g=0.614
+auto-stop
+dir=0 duty=195
+run=2 dir=0 duty=195 imu=1 w=100 ppr=2 n=221 err=79 pulses=84 rise=378 pps=168.0 rpm=5040 vib_rms_g=0.6492 amean_g=0.760
+run=2 dir=0 duty=195 imu=1 w=100 ppr=2 n=498 err=0 pulses=7 rise=8 pps=14.0 rpm=420 vib_rms_g=0.1122 amean_g=1.024
+# [rest lines omitted]
+dir=1 duty=255
+run=8 dir=1 duty=255 imu=1 w=100 ppr=2 n=240 err=82 pulses=85 rise=247 pps=170.0 rpm=5100 vib_rms_g=0.4769 amean_g=0.865
+run=8 dir=1 duty=255 imu=1 w=100 ppr=2 n=100 err=145 pulses=146 rise=567 pps=290.3 rpm=8708 vib_rms_g=0.8219 amean_g=0.462
+run=8 dir=1 duty=255 imu=1 w=100 ppr=2 n=110 err=143 pulses=147 rise=613 pps=293.4 rpm=8802 vib_rms_g=0.7258 amean_g=0.420
+run=8 dir=1 duty=255 imu=1 w=100 ppr=2 n=88 err=132 pulses=145 rise=630 pps=289.4 rpm=8683 vib_rms_g=0.8496 amean_g=0.278
+run=8 dir=1 duty=255 imu=1 w=100 ppr=2 n=98 err=134 pulses=143 rise=641 pps=285.4 rpm=8563 vib_rms_g=0.8035 amean_g=0.531
+run=8 dir=1 duty=255 imu=1 w=100 ppr=2 n=89 err=139 pulses=144 rise=613 pps=288.0 rpm=8640 vib_rms_g=0.8619 amean_g=0.456
+auto-stop
+dir=0 duty=255
+run=8 dir=0 duty=255 imu=1 w=100 ppr=2 n=403 err=32 pulses=77 rise=228 pps=154.0 rpm=4620 vib_rms_g=0.4090 amean_g=1.021
+run=8 dir=0 duty=255 imu=1 w=100 ppr=2 n=499 err=0 pulses=0 rise=0 pps=0.0 rpm=0 vib_rms_g=0.0063 amean_g=1.087
+# [rest lines omitted]
+dir=1 duty=255
+run=9 dir=1 duty=255 imu=1 w=100 ppr=2 n=431 err=17 pulses=20 rise=45 pps=40.0 rpm=1200 vib_rms_g=0.1900 amean_g=1.066
+run=9 dir=1 duty=255 imu=1 w=100 ppr=2 n=110 err=122 pulses=117 rise=583 pps=232.6 rpm=6978 vib_rms_g=0.7935 amean_g=0.421
+run=9 dir=1 duty=255 imu=1 w=100 ppr=2 n=99 err=137 pulses=110 rise=712 pps=220.0 rpm=6600 vib_rms_g=0.8505 amean_g=0.412
+run=9 dir=1 duty=255 imu=1 w=100 ppr=2 n=101 err=145 pulses=101 rise=659 pps=200.8 rpm=6024 vib_rms_g=0.7823 amean_g=0.313
+run=9 dir=1 duty=255 imu=1 w=100 ppr=2 n=89 err=136 pulses=101 rise=644 pps=202.0 rpm=6060 vib_rms_g=0.8125 amean_g=0.319
+run=9 dir=1 duty=255 imu=1 w=100 ppr=2 n=118 err=149 pulses=111 rise=751 pps=221.1 rpm=6633 vib_rms_g=0.8135 amean_g=0.270
+auto-stop
+dir=0 duty=255
+run=9 dir=0 duty=255 imu=1 w=100 ppr=2 n=219 err=103 pulses=110 rise=572 pps=220.0 rpm=6600 vib_rms_g=0.6296 amean_g=0.793
+run=9 dir=0 duty=255 imu=1 w=100 ppr=2 n=499 err=0 pulses=12 rise=12 pps=24.0 rpm=720 vib_rms_g=0.1195 amean_g=1.087
+run=9 dir=0 duty=255 imu=1 w=100 ppr=2 n=499 err=0 pulses=0 rise=0 pps=0.0 rpm=0 vib_rms_g=0.0053 amean_g=1.087
+# [rest lines omitted]

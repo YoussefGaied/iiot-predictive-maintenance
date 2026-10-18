@@ -1,0 +1,54 @@
+# Phase 6, firmware phase6b_pulse_width v0.1 (no filter; HIGH-pulse width buckets in microseconds:
+# b0 <20 | b1 20-49 | b2 50-99 | b3 100-199 | b4 200-499 | b5 500-999 | b6 >=1000).
+# Same disc, now with black tape on the sectors. 6 AA, forward 3 s runs, two runs each at duty 145, 195, 255.
+# Pasted by the user (dir=1 lines; one first line of a run was pasted without its "dir=1 " prefix). Timestamps removed.
+# Reading: completed pulses per 500 ms (sum of b0..b6, steady windows) about 66-69 / 91-94 / 134-138 at duty
+# 145 / 195 / 255, within about 2 % between runs. rise is 1.5-4 times higher (glitchy edges).
+# --- duty 145, run 1
+dir=1 duty=145 d0=0 rise=3 b0=0 b1=0 b2=0 b3=0 b4=0 b5=0 b6=2
+dir=1 duty=145 d0=1 rise=84 b0=0 b1=0 b2=0 b3=0 b4=0 b5=10 b6=45
+dir=1 duty=145 d0=1 rise=102 b0=0 b1=0 b2=0 b3=0 b4=0 b5=20 b6=48
+dir=1 duty=145 d0=1 rise=107 b0=0 b1=0 b2=0 b3=0 b4=0 b5=17 b6=51
+dir=1 duty=145 d0=1 rise=106 b0=0 b1=0 b2=0 b3=0 b4=0 b5=17 b6=51
+dir=1 duty=145 d0=0 rise=125 b0=0 b1=1 b2=0 b3=0 b4=0 b5=15 b6=53
+auto-stop
+# --- duty 145, run 2
+dir=1 duty=145 d0=0 rise=16 b0=0 b1=0 b2=0 b3=0 b4=0 b5=0 b6=10
+dir=1 duty=145 d0=0 rise=92 b0=0 b1=0 b2=0 b3=0 b4=0 b5=12 b6=49
+dir=1 duty=145 d0=1 rise=123 b0=0 b1=0 b2=0 b3=1 b4=0 b5=13 b6=52
+dir=1 duty=145 d0=0 rise=115 b0=0 b1=1 b2=0 b3=2 b4=0 b5=17 b6=47
+dir=1 duty=145 d0=0 rise=116 b0=2 b1=1 b2=0 b3=0 b4=0 b5=17 b6=47
+dir=1 duty=145 d0=0 rise=140 b0=0 b1=0 b2=0 b3=1 b4=0 b5=18 b6=47
+auto-stop
+# --- duty 195, run 1
+dir=1 duty=195 d0=1 rise=24 b0=0 b1=0 b2=0 b3=0 b4=0 b5=2 b6=11
+dir=1 duty=195 d0=0 rise=236 b0=1 b1=4 b2=3 b3=0 b4=3 b5=49 b6=29
+dir=1 duty=195 d0=1 rise=255 b0=2 b1=0 b2=1 b3=0 b4=0 b5=51 b6=39
+dir=1 duty=195 d0=1 rise=226 b0=4 b1=0 b2=1 b3=0 b4=1 b5=56 b6=32
+dir=1 duty=195 d0=1 rise=227 b0=11 b1=0 b2=0 b3=0 b4=0 b5=55 b6=27
+dir=1 duty=195 d0=1 rise=256 b0=5 b1=1 b2=1 b3=0 b4=2 b5=60 b6=25
+auto-stop
+# --- duty 195, run 2
+dir=1 duty=195 d0=0 rise=28 b0=0 b1=0 b2=0 b3=0 b4=0 b5=2 b6=14
+dir=1 duty=195 d0=0 rise=200 b0=7 b1=0 b2=0 b3=0 b4=0 b5=55 b6=26
+dir=1 duty=195 d0=1 rise=223 b0=10 b1=0 b2=0 b3=2 b4=1 b5=51 b6=28
+dir=1 duty=195 d0=0 rise=234 b0=10 b1=0 b2=1 b3=3 b4=0 b5=54 b6=26
+dir=1 duty=195 d0=0 rise=222 b0=12 b1=1 b2=0 b3=0 b4=0 b5=58 b6=21
+dir=1 duty=195 d0=1 rise=269 b0=2 b1=0 b2=1 b3=10 b4=1 b5=52 b6=25
+auto-stop
+# --- duty 255, run 1
+dir=1 duty=255 d0=1 rise=275 b0=2 b1=0 b2=0 b3=3 b4=35 b5=44 b6=5
+dir=1 duty=255 d0=0 rise=486 b0=0 b1=2 b2=3 b3=8 b4=86 b5=35 b6=0
+dir=1 duty=255 d0=1 rise=563 b0=3 b1=16 b2=0 b3=6 b4=78 b5=31 b6=0
+dir=1 duty=255 d0=0 rise=541 b0=3 b1=10 b2=8 b3=16 b4=74 b5=23 b6=2
+dir=1 duty=255 d0=0 rise=520 b0=10 b1=4 b2=1 b3=0 b4=87 b5=35 b6=1
+dir=1 duty=255 d0=1 rise=422 b0=6 b1=2 b2=3 b3=0 b4=80 b5=41 b6=6
+auto-stop
+# --- duty 255, run 2
+dir=1 duty=255 d0=1 rise=63 b0=1 b1=0 b2=0 b3=0 b4=5 b5=19 b6=5
+dir=1 duty=255 d0=0 rise=365 b0=1 b1=1 b2=0 b3=5 b4=69 b5=49 b6=9
+dir=1 duty=255 d0=1 rise=348 b0=3 b1=0 b2=0 b3=0 b4=63 b5=68 b6=4
+dir=1 duty=255 d0=1 rise=415 b0=0 b1=0 b2=0 b3=0 b4=84 b5=49 b6=1
+dir=1 duty=255 d0=0 rise=349 b0=0 b1=0 b2=0 b3=4 b4=81 b5=46 b6=4
+dir=1 duty=255 d0=1 rise=353 b0=5 b1=0 b2=1 b3=6 b4=78 b5=45 b6=3
+auto-stop

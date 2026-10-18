@@ -1,0 +1,38 @@
+# Phase 7B, firmware phase7b_baseline v0.4 (RISING interrupt; w<us> = wait w us after the edge and count only if D0
+# is still HIGH). OLD bar blade on the shaft and passing through the slot, IMU off, duty 255 forward, 6 AA.
+# Pasted by the user (dir=1 lines; one run per setting). Timestamps removed. Columns: pulses = counted rising edges.
+# Reading: w0 counts about 860-1040 per second-equivalent; any filter of 50 us or more counts about nothing.
+# (An earlier test with the blade removed gave about 880-940 Hz at w0 and about 0 at w50 and above.)
+# --- w0
+dir=1 duty=255
+run=5 dir=1 duty=255 imu=0 w=0 n=0 err=0 pulses=13 hz=26.0 rpm=780 vib_rms_g=0.0000 amean_g=0.000
+run=5 dir=1 duty=255 imu=0 w=0 n=0 err=0 pulses=429 hz=858.0 rpm=25740 vib_rms_g=0.0000 amean_g=0.000
+run=5 dir=1 duty=255 imu=0 w=0 n=0 err=0 pulses=521 hz=1042.0 rpm=31260 vib_rms_g=0.0000 amean_g=0.000
+run=5 dir=1 duty=255 imu=0 w=0 n=0 err=0 pulses=510 hz=1020.0 rpm=30600 vib_rms_g=0.0000 amean_g=0.000
+run=5 dir=1 duty=255 imu=0 w=0 n=0 err=0 pulses=503 hz=1006.0 rpm=30180 vib_rms_g=0.0000 amean_g=0.000
+run=5 dir=1 duty=255 imu=0 w=0 n=0 err=0 pulses=496 hz=992.0 rpm=29760 vib_rms_g=0.0000 amean_g=0.000
+auto-stop
+# --- w50
+run=6 dir=1 duty=255 imu=0 w=50 n=0 err=0 pulses=0 hz=0.0 rpm=0 vib_rms_g=0.0000 amean_g=0.000
+run=6 dir=1 duty=255 imu=0 w=50 n=0 err=0 pulses=0 hz=0.0 rpm=0 vib_rms_g=0.0000 amean_g=0.000
+run=6 dir=1 duty=255 imu=0 w=50 n=0 err=0 pulses=0 hz=0.0 rpm=0 vib_rms_g=0.0000 amean_g=0.000
+run=6 dir=1 duty=255 imu=0 w=50 n=0 err=0 pulses=0 hz=0.0 rpm=0 vib_rms_g=0.0000 amean_g=0.000
+run=6 dir=1 duty=255 imu=0 w=50 n=0 err=0 pulses=1 hz=2.0 rpm=60 vib_rms_g=0.0000 amean_g=0.000
+run=6 dir=1 duty=255 imu=0 w=50 n=0 err=0 pulses=0 hz=0.0 rpm=0 vib_rms_g=0.0000 amean_g=0.000
+auto-stop
+# --- w100
+run=7 dir=1 duty=255 imu=0 w=100 n=0 err=0 pulses=0 hz=0.0 rpm=0 vib_rms_g=0.0000 amean_g=0.000
+run=7 dir=1 duty=255 imu=0 w=100 n=0 err=0 pulses=2 hz=4.0 rpm=120 vib_rms_g=0.0000 amean_g=0.000
+run=7 dir=1 duty=255 imu=0 w=100 n=0 err=0 pulses=0 hz=0.0 rpm=0 vib_rms_g=0.0000 amean_g=0.000
+run=7 dir=1 duty=255 imu=0 w=100 n=0 err=0 pulses=2 hz=4.0 rpm=120 vib_rms_g=0.0000 amean_g=0.000
+run=7 dir=1 duty=255 imu=0 w=100 n=0 err=0 pulses=1 hz=2.0 rpm=60 vib_rms_g=0.0000 amean_g=0.000
+run=7 dir=1 duty=255 imu=0 w=100 n=0 err=0 pulses=0 hz=0.0 rpm=0 vib_rms_g=0.0000 amean_g=0.000
+auto-stop
+# --- w200
+run=8 dir=1 duty=255 imu=0 w=200 n=0 err=0 pulses=1 hz=2.0 rpm=60 vib_rms_g=0.0000 amean_g=0.000
+run=8 dir=1 duty=255 imu=0 w=200 n=0 err=0 pulses=0 hz=0.0 rpm=0 vib_rms_g=0.0000 amean_g=0.000
+run=8 dir=1 duty=255 imu=0 w=200 n=0 err=0 pulses=0 hz=0.0 rpm=0 vib_rms_g=0.0000 amean_g=0.000
+run=8 dir=1 duty=255 imu=0 w=200 n=0 err=0 pulses=0 hz=0.0 rpm=0 vib_rms_g=0.0000 amean_g=0.000
+run=8 dir=1 duty=255 imu=0 w=200 n=0 err=0 pulses=0 hz=0.0 rpm=0 vib_rms_g=0.0000 amean_g=0.000
+run=8 dir=1 duty=255 imu=0 w=200 n=0 err=0 pulses=0 hz=0.0 rpm=0 vib_rms_g=0.0000 amean_g=0.000
+auto-stop
