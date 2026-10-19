@@ -1,0 +1,43 @@
+# Phase 8D: phase8d_telemetry v0.1, first run, Serial Monitor (as pasted).
+# Known bugs of v0.1 fixed in v0.2: z used a partly filled window (cur stayed null); vib_n threshold 450 was above the new motor-off n of about 424.
+=== phase8d_telemetry v0.1  (f/r/s, +/-, z, i, w<us>, p<n>)  ppr=2 ASSUMED ===
+WHO_AM_I = 0x70
+WiFi connecting........
+WiFi OK, IP 192.168.1.8
+MQTT connected (rc=0)
+dir=0 duty=195
+seq=0 pub-ok  dir=stop duty=195 pps=0.0 n=1 err=0 vib=0.0000 amean=1.001 valid=0 cur=null
+seq=1 pub-ok  dir=stop duty=195 pps=0.0 n=424 err=0 vib=0.0052 amean=1.003 valid=0 cur=null
+seq=2 pub-ok  dir=stop duty=195 pps=0.0 n=424 err=0 vib=0.0052 amean=1.003 valid=0 cur=null
+seq=3 pub-ok  dir=stop duty=195 pps=0.0 n=424 err=0 vib=0.0054 amean=1.003 valid=0 cur=null
+z: not enough samples yet, try again
+seq=4 pub-ok  dir=stop duty=195 pps=0.0 n=423 err=0 vib=0.0053 amean=1.003 valid=0 cur=null
+seq=5 pub-ok  dir=stop duty=195 pps=0.0 n=424 err=0 vib=0.0048 amean=1.003 valid=0 cur=null
+seq=6 pub-ok  dir=stop duty=195 pps=0.0 n=424 err=0 vib=0.0052 amean=1.003 valid=0 cur=null
+seq=7 pub-ok  dir=stop duty=195 pps=0.0 n=423 err=0 vib=0.0052 amean=1.003 valid=0 cur=null
+seq=8 pub-ok  dir=stop duty=195 pps=0.0 n=424 err=0 vib=0.0052 amean=1.003 valid=0 cur=null
+dir=1 duty=195
+seq=9 pub-ok  dir=fwd duty=195 pps=109.1 n=356 err=31 vib=0.4322 amean=0.949 valid=0 cur=null
+seq=10 pub-ok  dir=fwd duty=195 pps=207.6 n=265 err=65 vib=0.6603 amean=0.851 valid=0 cur=null
+seq=11 pub-ok  dir=fwd duty=195 pps=212.0 n=274 err=53 vib=0.6478 amean=0.805 valid=0 cur=null
+seq=12 pub-ok  dir=fwd duty=195 pps=210.0 n=248 err=58 vib=0.6541 amean=0.840 valid=0 cur=null
+seq=13 pub-ok  dir=fwd duty=195 pps=212.0 n=274 err=60 vib=0.6058 amean=0.888 valid=0 cur=null
+seq=14 pub-ok  dir=fwd duty=195 pps=210.3 n=256 err=65 vib=0.6113 amean=0.867 valid=0 cur=null
+auto-stop
+dir=0 duty=195
+seq=15 pub-ok  dir=stop duty=195 pps=104.0 n=376 err=16 vib=0.3420 amean=0.975 valid=0 cur=null
+seq=16 pub-ok  dir=stop duty=195 pps=0.0 n=423 err=0 vib=0.0071 amean=1.003 valid=0 cur=null
+seq=17 pub-ok  dir=stop duty=195 pps=0.0 n=424 err=0 vib=0.0056 amean=1.003 valid=0 cur=null
+seq=18 pub-ok  dir=stop duty=195 pps=0.0 n=424 err=0 vib=0.0050 amean=1.003 valid=0 cur=null
+seq=19 pub-ok  dir=stop duty=195 pps=0.0 n=424 err=0 vib=0.0053 amean=1.003 valid=0 cur=null
+dir=-1 duty=195
+seq=20 pub-ok  dir=rev duty=195 pps=132.0 n=311 err=45 vib=0.5740 amean=0.911 valid=0 cur=null
+seq=21 pub-ok  dir=rev duty=195 pps=208.0 n=255 err=56 vib=0.7169 amean=0.887 valid=0 cur=null
+seq=22 pub-ok  dir=rev duty=195 pps=210.7 n=251 err=65 vib=0.7398 amean=0.835 valid=0 cur=null
+seq=23 pub-ok  dir=rev duty=195 pps=210.0 n=238 err=67 vib=0.7060 amean=0.906 valid=0 cur=null
+seq=24 pub-ok  dir=rev duty=195 pps=210.0 n=260 err=56 vib=0.7468 amean=0.840 valid=0 cur=null
+seq=25 pub-ok  dir=rev duty=195 pps=210.0 n=253 err=63 vib=0.7537 amean=0.914 valid=0 cur=null
+auto-stop
+dir=0 duty=195
+seq=26 pub-ok  dir=stop duty=195 pps=76.0 n=411 err=6 vib=0.3602 amean=1.038 valid=0 cur=null
+seq=27 pub-ok  dir=stop duty=195 pps=0.0 n=424 err=0 vib=0.0056 amean=1.060 valid=0 cur=null

@@ -1,0 +1,30 @@
+# Phase 8D/8E: database and API checks (as pasted; the "notes" list in each API response is omitted here, it is the same text as in backend/api.py)
+# After the v0.1 run (table `messages`, topic iiot/rig1/telemetry; includes rows from earlier boots, so seq is not unique):
+88|0|76
+# Last 15 rows (seq|dir|pps|cur|valid), from a later run in which 'z' had worked:
+76|stop|0.0|-43.6|0
+75|stop|0.0|-105.5|0
+74|stop|0.0|-92.1|0
+73|stop|0.0|-141.1|0
+72|stop|0.0|-119.2|0
+71|stop|0.0|-101.7|0
+70|stop|54.0|-166.0|0
+69|rev|202.0|-200.8|0
+68|rev|202.0|-224.6|0
+67|rev|204.0|-206.2|0
+66|rev|203.2|-185.9|0
+65|rev|202.0|-174.4|0
+64|rev|144.0|-161.1|0
+63|stop|0.0|-137.5|0
+62|stop|0.0|-153.7|0
+# Phase 8E: backfill into the typed table
+$ sqlite3 backend/data/iiot.db "SELECT COUNT(*), MIN(seq), MAX(seq) FROM telemetry;"
+129|0|76
+# API with the ESP32 powered off:
+/api/status   {"device_status":"offline","as_of":"2026-10-19T20:33:17.090+00:00"}
+/api/latest   data: id=129 received_at=2026-10-19T20:27:12.715+00:00 fw=0.2 seq=40 motor_dir=stop current_dmv=-42.9 vib_rms_g=0.0054 vib_n=420 vib_err=0 amean_g=1.127 vib_valid=0 rssi=-64
+/api/telemetry?limit=3   count=3, ids 127,128,129 (oldest first)
+# API with the ESP32 powered on (fw 0.2, fresh boot, motor off):
+/api/status   {"device_status":"online","as_of":"2026-10-19T20:34:55.179+00:00"}
+/api/latest   data: id=155 received_at=2026-10-19T20:35:08.693+00:00 seq=25 uptime_ms=19666 current_dmv=null vib_rms_g=0.0051 vib_n=420 vib_err=0 amean_g=1.001 vib_valid=1 rssi=-74
+(3 s later) id=161 received_at=2026-10-19T20:35:11.694+00:00 seq=31 uptime_ms=22668 current_dmv=null vib_rms_g=0.0053 vib_n=420 vib_err=0 amean_g=1.0 vib_valid=1 rssi=-74

@@ -1,0 +1,46 @@
+# Phase 8D: phase8d_telemetry v0.2, second run, Serial Monitor (as pasted; the paste starts at seq=4, the banner and seq 0-3 were not captured).
+# 'z' was sent after 4 stable motor-off windows. Rest level 2443.6 mV.
+seq=4 pub-ok  dir=stop duty=195 pps=0.0 n=420 err=0 vib=0.0051 amean=1.060 valid=0 cur=null
+seq=5 pub-ok  dir=stop duty=195 pps=0.0 n=420 err=0 vib=0.0049 amean=1.060 valid=0 cur=null
+seq=6 pub-ok  dir=stop duty=195 pps=0.0 n=420 err=0 vib=0.0061 amean=1.060 valid=0 cur=null
+seq=7 pub-ok  dir=stop duty=195 pps=0.0 n=420 err=0 vib=0.0058 amean=1.060 valid=0 cur=null
+current zero set: rest = 2443.6 mV (last full window)
+seq=8 pub-ok  dir=stop duty=195 pps=0.0 n=420 err=0 vib=0.0052 amean=1.060 valid=0 cur=1.6
+seq=9 pub-ok  dir=stop duty=195 pps=0.0 n=420 err=0 vib=0.0052 amean=1.060 valid=0 cur=-6.5
+seq=10 pub-ok  dir=stop duty=195 pps=0.0 n=420 err=0 vib=0.0051 amean=1.060 valid=0 cur=-7.9
+seq=11 pub-ok  dir=stop duty=195 pps=0.0 n=420 err=0 vib=0.0055 amean=1.060 valid=0 cur=-13.6
+seq=12 pub-ok  dir=stop duty=195 pps=0.0 n=420 err=0 vib=0.0051 amean=1.061 valid=0 cur=2.1
+seq=13 pub-ok  dir=stop duty=195 pps=0.0 n=419 err=0 vib=0.0053 amean=1.060 valid=0 cur=-5.0
+dir=1 duty=195
+seq=14 pub-ok  dir=fwd duty=195 pps=13.9 n=402 err=6 vib=0.1466 amean=1.049 valid=0 cur=-8.5
+seq=15 pub-ok  dir=fwd duty=195 pps=183.6 n=254 err=60 vib=0.6255 amean=0.969 valid=0 cur=-10.8
+seq=16 pub-ok  dir=fwd duty=195 pps=200.0 n=263 err=61 vib=0.7117 amean=0.900 valid=0 cur=-50.3
+seq=17 pub-ok  dir=fwd duty=195 pps=201.6 n=263 err=67 vib=0.6887 amean=0.903 valid=0 cur=-15.1
+seq=18 pub-ok  dir=fwd duty=195 pps=202.0 n=240 err=58 vib=0.6813 amean=0.830 valid=0 cur=-41.2
+seq=19 pub-ok  dir=fwd duty=195 pps=202.0 n=264 err=51 vib=0.7137 amean=0.908 valid=0 cur=-7.7
+auto-stop
+dir=0 duty=195
+seq=20 pub-ok  dir=stop duty=195 pps=194.0 n=323 err=36 vib=0.6372 amean=0.995 valid=0 cur=-2.3
+seq=21 pub-ok  dir=stop duty=195 pps=14.0 n=419 err=0 vib=0.1207 amean=1.126 valid=0 cur=-7.5
+seq=22 pub-ok  dir=stop duty=195 pps=0.0 n=420 err=0 vib=0.0051 amean=1.126 valid=0 cur=-7.2
+seq=23 pub-ok  dir=stop duty=195 pps=0.0 n=419 err=0 vib=0.0048 amean=1.126 valid=0 cur=5.4
+seq=24 pub-ok  dir=stop duty=195 pps=0.0 n=420 err=0 vib=0.0051 amean=1.126 valid=0 cur=-2.1
+seq=25 pub-ok  dir=stop duty=195 pps=0.0 n=420 err=0 vib=0.0052 amean=1.126 valid=0 cur=4.7
+seq=26 pub-ok  dir=stop duty=195 pps=0.0 n=420 err=0 vib=0.0049 amean=1.126 valid=0 cur=4.8
+dir=-1 duty=195
+seq=27 pub-ok  dir=rev duty=195 pps=32.0 n=408 err=8 vib=0.2499 amean=1.097 valid=0 cur=-11.5
+seq=28 pub-ok  dir=rev duty=195 pps=190.5 n=285 err=53 vib=0.7391 amean=1.025 valid=0 cur=-0.2
+seq=29 pub-ok  dir=rev duty=195 pps=201.6 n=280 err=61 vib=0.8285 amean=0.931 valid=0 cur=-10.4
+seq=30 pub-ok  dir=rev duty=195 pps=202.8 n=263 err=61 vib=0.8032 amean=0.968 valid=0 cur=-6.3
+seq=31 pub-ok  dir=rev duty=195 pps=200.0 n=258 err=60 vib=0.8165 amean=0.920 valid=0 cur=-1.3
+seq=32 pub-ok  dir=rev duty=195 pps=200.0 n=233 err=56 vib=0.7854 amean=0.968 valid=0 cur=-63.4
+auto-stop
+dir=0 duty=195
+seq=33 pub-ok  dir=stop duty=195 pps=170.0 n=333 err=41 vib=0.6317 amean=1.034 valid=0 cur=-12.9
+seq=34 pub-ok  dir=stop duty=195 pps=0.0 n=420 err=0 vib=0.0704 amean=1.127 valid=0 cur=-21.0
+seq=35 pub-ok  dir=stop duty=195 pps=0.0 n=420 err=0 vib=0.0050 amean=1.126 valid=0 cur=-29.0
+seq=36 pub-ok  dir=stop duty=195 pps=0.0 n=420 err=0 vib=0.0051 amean=1.126 valid=0 cur=-26.9
+seq=37 pub-ok  dir=stop duty=195 pps=0.0 n=420 err=0 vib=0.0050 amean=1.126 valid=0 cur=-25.9
+seq=38 pub-ok  dir=stop duty=195 pps=0.0 n=420 err=0 vib=0.0052 amean=1.126 valid=0 cur=-25.7
+seq=39 pub-ok  dir=stop duty=195 pps=0.0 n=420 err=0 vib=0.0052 amean=1.126 valid=0 cur=-24.3
+seq=40 pub-ok  dir=stop duty=195 pps=0.0 n=420 err=0 vib=0.0054 amean=1.127 valid=0 cur=-42.9

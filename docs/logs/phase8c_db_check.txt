@@ -1,0 +1,4 @@
+# Phase 8C: SQLite check (consumer v0.1)
+$ sqlite3 backend/data/iiot.db "SELECT COUNT(*), MIN(seq), MAX(seq) FROM messages WHERE topic='iiot/rig1/hello';"
+10|0|9
+# 10 rows, seq 0..9: MAX-MIN = COUNT-1, no message lost.

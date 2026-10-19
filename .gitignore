@@ -24,3 +24,6 @@ dist/
 secrets.h
 *.secret
 tools/tests/fake_*
+
+backend/.venv/
+backend/data/*.db
