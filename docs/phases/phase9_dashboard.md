@@ -26,8 +26,15 @@ Date: 2026-10-20. Tested on stored data only (ESP32 not connected).
   dashboard missed older runs. Fixed with limit 600. Found by curl checks; my first guess was wrong.
 - After editing the hook, Vite hot reload kept old state; a hard refresh (Ctrl+Shift+R) was needed.
 
-## Not tested
-- Live data from the ESP32 (online status, growing rows, incremental fetch). To do when home.
+## Live test (ESP32 connected, motor off, 2026-10-24)
+- Device card online (green), "Last data: 1 s ago", no STALE tag; Serial Monitor showed pub-ok every window.
+- New rows appeared in the charts without a page refresh (incremental fetch worked).
+- When the motor was started, the window failed the vibration checks (vib_valid = 0) and the card showed "not valid" (seen in the Serial Monitor line, not separately screenshotted).
+- After unplugging the ESP32 the Device card went offline in about 20 s (one test, approximate).
+- Valid motor-off windows contained short spikes up to about 0.5 g (cause unknown), so a single window over a threshold must not raise an alarm.
+- With 600 rows kept, older run sessions scrolled out of the Speed chart (see Limits).
+- The first consumer start failed with "Not authorized" because the placeholder password was used; the real password fixed it.
 
 ## Limits
 - History keeps the last 600 rows. Time axis is real time, so gaps between sessions are compressed.
+- Because only the newest 600 rows are kept, older sessions disappear from the charts as new data arrives.
