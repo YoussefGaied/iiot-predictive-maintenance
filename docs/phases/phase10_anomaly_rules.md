@@ -33,9 +33,19 @@ Raw output: `docs/logs/phase10_replay_output.txt`.
 ## Tests
 `cd backend && python3 -m unittest discover -s tests -v` : 9 tests on synthetic rows (quiet rest, healthy run,
 no-speed, other duty ignored, speed-while-stopped, 3-window vibration rule, invalid windows, reboot reset, staleness).
-Output: `docs/logs/phase10_unit_tests.txt`. The `/api/anomalies` endpoint and the dashboard card were exercised
-against a copy of the stored database (API test client, `tsc`, ESLint, Vite build). **Not yet run live** with the
-ESP32, broker and browser.
+Output: `docs/logs/phase10_unit_tests.txt`. The `/api/anomalies` endpoint and the dashboard card were first exercised
+against a copy of the stored database (API test client, `tsc`, ESLint, Vite build).
+
+## Live check (2026-10-25)
+- Run on the author's machine: 9 tests passed and the replay output matched the one above (834 rows).
+- Consumer not running: the card showed one alert, `DATA_STALE` ("device status is offline", last telemetry 65236 s
+  ago). Screenshot: `docs/images/phase10_rules_card_stale.png`.
+- Consumer running, ESP32 connected, motor stopped: Device online, last data 1 s ago, card "no active alerts".
+  Screenshot: `docs/images/phase10_rules_card_live.png`.
+- Not observed live: any alert from the motor or vibration rules. Those were checked only on stored data and synthetic
+  rows.
+- In that capture the IMU mean magnitude read 1.044 g and then 2.299 g at rest (cause not investigated), so
+  `vib_valid` was 0 and the vibration rule skipped those windows.
 
 ## What cannot be done yet
 - Current rules: current is unusable with Wi-Fi on and uncalibrated.

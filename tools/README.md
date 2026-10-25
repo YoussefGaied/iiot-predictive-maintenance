@@ -1,7 +1,11 @@
 # Serial logger and analysis tool
 
 A small Python tool (`logtool.py`, standard library plus pyserial) for the
-Industrial IoT Predictive Maintenance rig. It does two jobs:
+Industrial IoT Predictive Maintenance rig. It was built in Phase 5 for raw
+serial captures. Since Phase 8, live telemetry no longer goes through it: the
+ESP32 publishes over MQTT, `backend/consumer.py` stores it in SQLite, and the
+dashboard reads the API. Use this tool for serial-only experiments (sketches
+that print `key=value` lines) and for analysing saved serial output. It does two jobs:
 
 1. **`log`**: read lines from the ESP32 serial port and save each parsed
    line to a CSV file with a host timestamp.
@@ -66,7 +70,7 @@ timestamps), per line for `.txt` files (no timestamps).
   sensitivity only, no reference ammeter).
 - Drift is a straight-line fit. It cannot describe non-linear behaviour,
   and a short log gives an unreliable slope.
-- No plotting, no real-time display, and no anomaly detection yet.
+- No plotting and no real-time display. Anomaly rules live in `backend/rules.py`, not here.
 
 ## Tests
 
