@@ -1,0 +1,14 @@
+test_healthy_run_no_alerts (test_rules.Rules.test_healthy_run_no_alerts) ... ok
+test_invalid_windows_do_not_count_or_reset (test_rules.Rules.test_invalid_windows_do_not_count_or_reset) ... ok
+test_no_speed_when_commanded (test_rules.Rules.test_no_speed_when_commanded) ... ok
+test_other_duty_not_evaluated (test_rules.Rules.test_other_duty_not_evaluated) ... ok
+test_quiet_rest_no_alerts (test_rules.Rules.test_quiet_rest_no_alerts) ... ok
+test_reboot_resets_state (test_rules.Rules.test_reboot_resets_state) ... ok
+test_speed_while_stopped_after_grace (test_rules.Rules.test_speed_while_stopped_after_grace) ... ok
+test_staleness (test_rules.Rules.test_staleness) ... ok
+test_vibration_needs_three_valid_windows (test_rules.Rules.test_vibration_needs_three_valid_windows) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+OK

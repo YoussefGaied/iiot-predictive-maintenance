@@ -39,6 +39,21 @@ export interface TelemetryResponse {
   notes: string[];
 }
 
+export interface AnomalyAlert {
+  rule: string;
+  severity: string;
+  message: string;
+}
+
+export interface AnomalyResponse {
+  as_of: string;
+  rows_evaluated: number;
+  alert_count: number;
+  alerts: AnomalyAlert[];
+  rules: Record<string, string>;
+  notes: string[];
+}
+
 async function getJson<T>(path: string): Promise<T> {
   const res = await fetch(`${API}${path}`);
   if (!res.ok) throw new Error(`${path}: HTTP ${res.status}`);
@@ -49,3 +64,4 @@ export const fetchStatus = () => getJson<StatusResponse>("/api/status");
 export const fetchLatest = () => getJson<LatestResponse>("/api/latest");
 export const fetchTelemetry = (limit = 200, afterId = 0) =>
   getJson<TelemetryResponse>(`/api/telemetry?limit=${limit}&after_id=${afterId}`);
+export const fetchAnomalies = () => getJson<AnomalyResponse>("/api/anomalies");

@@ -1,0 +1,26 @@
+834 rows, ids 1-834, 2026-10-19 .. 2026-10-24
+
+rule                               ids  start (UTC)             detail
+DATA_STALE                    12-12     2026-10-19T20:23:24.983 gap of 8 s before this row
+DATA_STALE                    48-48     2026-10-19T20:23:53.341 gap of 11 s before this row
+DATA_STALE                    89-89     2026-10-19T20:26:52.720 gap of 165 s before this row
+DATA_STALE                   130-130    2026-10-19T20:34:56.277 gap of 464 s before this row
+DATA_STALE                   360-360    2026-10-24T16:27:14.448 gap of 417024 s before this row
+DATA_STALE                   429-429    2026-10-24T16:27:54.548 gap of 6 s before this row
+NO_SPEED_WHILE_COMMANDED     473-476    2026-10-24T16:28:16.523 commanded fwd at duty 195 but only 0.0 pulses/s
+VIBRATION_AT_REST            482-485    2026-10-24T16:28:21.035 vibration 0.1007 g while stopped
+VIBRATION_AT_REST            541-544    2026-10-24T16:28:50.584 vibration 0.3563 g while stopped
+VIBRATION_AT_REST            549-552    2026-10-24T16:28:54.577 vibration 0.0472 g while stopped
+DATA_STALE                   565-565    2026-10-24T16:29:10.865 gap of 9 s before this row
+VIBRATION_AT_REST            592-592    2026-10-24T16:29:24.273 vibration 0.0367 g while stopped
+NO_SPEED_WHILE_COMMANDED     610-613    2026-10-24T16:29:33.386 commanded fwd at duty 195 but only 0.0 pulses/s
+NO_SPEED_WHILE_COMMANDED     633-636    2026-10-24T16:29:44.852 commanded fwd at duty 195 but only 0.0 pulses/s
+NO_SPEED_WHILE_COMMANDED     656-659    2026-10-24T16:29:56.284 commanded fwd at duty 195 but only 0.0 pulses/s
+NO_SPEED_WHILE_COMMANDED     683-686    2026-10-24T16:30:09.838 commanded fwd at duty 195 but only 0.0 pulses/s
+VIBRATION_AT_REST            821-821    2026-10-24T16:31:18.851 vibration 0.0538 g while stopped
+
+episodes per rule and day:
+  DATA_STALE                 2026-10-19  4
+  DATA_STALE                 2026-10-24  3
+  NO_SPEED_WHILE_COMMANDED   2026-10-24  5
+  VIBRATION_AT_REST          2026-10-24  5

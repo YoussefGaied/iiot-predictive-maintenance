@@ -9,7 +9,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { fetchLatest, fetchStatus } from "./api";
+import { fetchAnomalies, fetchLatest, fetchStatus } from "./api";
 import { usePolling } from "./usePolling";
 import { useTelemetryHistory } from "./useTelemetryHistory";
 
@@ -104,6 +104,7 @@ export default function App() {
   const now = useNow(1000);
   const status = usePolling(fetchStatus, 2000);
   const latest = usePolling(fetchLatest, 2000);
+  const anomalies = usePolling(fetchAnomalies, 2000);
   const history = useTelemetryHistory(2000);
 
   const row = latest.data?.data ?? null;
@@ -168,6 +169,29 @@ export default function App() {
             {stale && row ? " (STALE)" : ""}
           </div>
           <div style={small}>Wi-Fi RSSI: {row ? `${row.rssi} dBm` : "-"}</div>
+        </Card>
+
+        <Card title="Condition rules (threshold, last ~60 s)">
+          {anomalies.data === null ? (
+            <div style={{ ...big, color: "orange" }}>{anomalies.error ? "unavailable" : "..."}</div>
+          ) : anomalies.data.alert_count === 0 ? (
+            <div style={{ ...big, color: "limegreen" }}>no active alerts</div>
+          ) : (
+            <>
+              <div style={{ ...big, color: "orange" }}>
+                {anomalies.data.alert_count} alert{anomalies.data.alert_count > 1 ? "s" : ""}
+              </div>
+              {anomalies.data.alerts.map((al) => (
+                <div key={al.rule} style={small}>
+                  <b>{al.rule}</b>: {al.message}
+                </div>
+              ))}
+            </>
+          )}
+          <div style={small}>
+            Rules from measured baselines, not failure prediction. No current, temperature or
+            running-vibration rule.
+          </div>
         </Card>
 
         <Card title="Motor (last stored row)">
@@ -243,6 +267,17 @@ export default function App() {
       {history.error && (
         <p style={{ color: "tomato" }}>History error: {history.error}</p>
       )}
+
+      <details style={{ marginTop: 16 }}>
+        <summary>Condition rule definitions</summary>
+        <ul>
+          {Object.entries(anomalies.data?.rules ?? {}).map(([k, v]) => (
+            <li key={k}>
+              <b>{k}</b>: {v}
+            </li>
+          ))}
+        </ul>
+      </details>
 
       <details style={{ marginTop: 16 }}>
         <summary>Data caveats from the API</summary>

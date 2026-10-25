@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
-"""api.py v0.1: read-only FastAPI over the SQLite database.
+"""api.py v0.2: read-only FastAPI over the SQLite database (v0.2 adds /api/anomalies).
 Run:  uvicorn api:app --host 127.0.0.1 --port 8000   (from backend/). Docs: http://127.0.0.1:8000/docs"""
 import os
 import sqlite3
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
+
+from rules import DESCRIPTIONS, Config, RuleEngine, check_staleness
 
 DB_PATH = os.environ.get("DB_PATH", os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "iiot.db"))
 NOTES = [
@@ -15,7 +17,7 @@ NOTES = [
     "No temperature: the DS18B20 is broken.",
 ]
 
-app = FastAPI(title="IIoT predictive maintenance demo rig", version="0.1")
+app = FastAPI(title="IIoT predictive maintenance demo rig", version="0.2")
 app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
                    allow_methods=["GET"], allow_headers=["*"])
 
@@ -56,3 +58,25 @@ def telemetry(limit: int = Query(200, ge=1, le=5000), after_id: int = Query(0, g
     rows = query("SELECT * FROM (SELECT * FROM telemetry WHERE id > ? ORDER BY id DESC LIMIT ?) ORDER BY id",
                  (after_id, limit))
     return {"count": len(rows), "data": rows, "notes": NOTES}
+
+
+@app.get("/api/anomalies")
+def anomalies(windows: int = Query(120, ge=10, le=1000)):
+    """Threshold-rule status (rules.py). Replays the newest `windows` telemetry rows (120 = about 60 s) through
+    the rule engine, then adds the stale-data check against the server clock. Condition flags, not failure predictions."""
+    from datetime import datetime, timezone
+    rows = query("SELECT * FROM (SELECT * FROM telemetry ORDER BY id DESC LIMIT ?) ORDER BY id", (windows,))
+    engine, active = RuleEngine(Config()), []
+    for r in rows:
+        active = engine.update(r)
+    st = status()["device_status"]
+    stale = check_staleness(rows[-1]["received_at"] if rows else None, datetime.now(timezone.utc), st)
+    alerts = ([stale] if stale else []) + active
+    return {"as_of": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "rows_evaluated": len(rows), "alert_count": len(alerts),
+            "alerts": [a.as_dict() for a in alerts],
+            "rules": DESCRIPTIONS,
+            "notes": ["Threshold rules tuned on the stored demo-rig data; not validated, not failure prediction.",
+                      "Only the newest rows are evaluated; an alert from earlier than that window is not shown.",
+                      "No rule exists for current or temperature (current unusable with Wi-Fi on; DS18B20 broken).",
+                      "No rule for vibration while the motor runs (IMU readings are invalid then)."]}
